@@ -23,8 +23,8 @@ export default function AreaItemCarrinho(props: AreaItemCarrinhoProps){
 
   console.log('Produto:', produto);
  return(
-  <div className="flex w-full items-center gap-5 bg-zinc-900 rounded-md overflow-hidden">
-    <div className="relative size-28">
+  <div className="flex w-full items-center p-4 md:gap-5 bg-zinc-900 rounded-md overflow-hidden">
+    <div className="overflow-hidden relative md:size-28">
       <Image 
       src={props.item.produto.imagem} 
       alt={props.item.produto.nome}
@@ -32,7 +32,7 @@ export default function AreaItemCarrinho(props: AreaItemCarrinhoProps){
       className="object-cover"/>
     </div>
     <div className="flex flex-col flex-1 gap-2 px-5">
-      <span className="ftext-xl font-bold">{props.item.produto.nome}</span>
+      <span className="text-xl font-bold">{props.item.produto.nome}</span>
       <span className="text-sm text-zinc-400">{props.item.produto.descricao}</span>
       <div className="flex items-center gap-2 mt-2 text-zinc-400 text-lg font-bold">
         <span>R$ {props.item.produto.preco.toFixed(2)}</span>
@@ -42,7 +42,7 @@ export default function AreaItemCarrinho(props: AreaItemCarrinhoProps){
         <span className="text-yellow-500">R$ {(props.item.produto.preco * props.item.quantidade).toFixed(2)}</span>
       </div>
     </div>
-    <div className="flex gap-2 items-center px-5">
+    <div className="flex flex-col md:flex-row gap-2 items-center px-5">
         <button onClick={()=> props.remover?.(props.item)}>
           <IconMinus />
         </button>
